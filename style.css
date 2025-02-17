@@ -1,0 +1,626 @@
+body {
+    /*display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Isso empurra o footer para o final */
+    align-items: flex-end;
+    background: linear-gradient(180deg, rgba(2,20,26,1) 0%, rgba(0,161,195,1) 100%);
+    background-attachment: fixed;
+
+    
+}
+
+html, body {
+    height: 100% !important; /* Garante que o html e o body ocupem 100% da altura */
+    margin: 0;
+    padding: 0;
+}
+
+#div_flores {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: -4%;
+}
+
+
+
+#container_flor {
+    width: 250px;
+    height: 80vh; /* Ajuste a altura para caber */
+    border-radius: 10px 10px 30px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 0; /* Remova ou reduza o espaçamento */
+}
+
+
+@keyframes crescerHasteFlorMenor {
+    0% {
+        height: 0; /* A haste começa do tamanho 0 */
+        opacity: 0;
+    }
+    100% {
+        height: 250px; /* Finaliza com o tamanho desejado */
+        opacity: 1;
+    }
+}
+
+.girassol {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100%; /* Mantém o girassol no topo da haste */
+    left: 50%; /* Centraliza */
+    margin-top: 50% !important;
+    transform: translateX(-50%); /* Ajusta o alinhamento */
+    z-index: 1;
+    animation: brotarGirassol 1.8s ease-out;
+
+}
+
+@keyframes brotarGirassol {
+    0% {
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes ventoPetalas{
+    0%{
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+    50%{
+        transform:  translateY(20%) translateX(30%)  rotate(120deg);
+        opacity: 1;
+    }
+}
+
+@keyframes ventoPetalasVerde {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.haste_flor, .flor_alta {
+    width: 15px;
+    background: rgb(70,145,60);
+    background: linear-gradient(49deg, rgba(70,145,60,1) 0%, rgba(113,191,105,1) 51%); 
+     border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    bottom: 0; /* Faz com que a haste comece da parte inferior do container */
+    left: 50%; /* Centraliza a haste horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
+    animation: crescerHaste 15s ease-out forwards; /* Duração aumentada para 15 segundos */
+
+
+}
+
+.flor_alta {
+    height: 350px !important;
+    background: rgb(70,145,60);
+background: linear-gradient(49deg, rgba(70,145,60,1) 0%, rgba(113,191,105,1) 51%) !important;
+animation: crescerHaste 15s ease-out forwards; /* Duração aumentada para 15 segundos */
+
+}
+
+.petala_flor {
+    /*width: 50px;
+    height: 120px;
+   /* background: linear-gradient(145deg, #c4e28e, #9bcd55); /* Gradiente suave de verde claro para amarelo esverdeado */
+   /* border-radius: 150% 150% 150% 150%;
+    background-color: yellow;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra sutil para profundidade */
+    /*margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    left: 20px;*/
+    position: absolute;
+    width: 30px;
+    height: 120px;
+    /*background-color: #ffcc00;*/
+   /* background: rgb(203,180,64);
+    background: linear-gradient(180deg, rgba(203,180,64,1) 8%, rgba(250,141,0,1) 55%);*/
+    background-color: #FFFFFF; /* Branco puro */
+   border-radius: 100% 100% 50% 50%; /* Arredondamento mais forte no topo */
+   border-bottom-right-radius: none;
+   border-bottom-left-radius: none;
+   clip-path: ellipse(60% 100% at 50% 50%);
+       top: 20px;
+    left: 50%;
+    color: red;
+   /* animation: ventoPetalas 1.8s ease-out;*/
+   animation: aparecerFlores 2s ease-out;
+
+
+    /*border:1px solid black;*/
+}
+
+
+
+.petala_flor_verde {
+    width: 60px;
+    height: 120px;
+    background: rgb(70,145,60);
+background: linear-gradient(49deg, rgba(70,145,60,1) 0%, rgba(113,191,105,1) 51%); 
+      position: absolute;
+    bottom: 100px; /* Coloca a pétala verde um pouco acima da base da haste */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centralizar completamente */
+    border-radius: 550% 150% 300% 300%;
+       animation: ventoPetalas 3s ease-out;
+
+
+
+}
+
+.petala_flor_verde:nth-child(1){
+    transform:  translateY(20%) translateX(30%)  rotate(120deg);
+    
+}
+.petala_flor_verde:nth-child(2){
+    transform:  translateY(-25%) translateX(-140%)  rotate(-70deg);
+}
+.haste_flor {
+    width: 15px;
+    height: 480px;
+    background: #2a6f56; /* Cor verde mais suave para a haste */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    bottom: 0; /* Faz com que a haste comece da parte inferior do container */
+    left: 50%; /* Centraliza a haste horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
+}
+
+.flor_alta {
+    height: 580px;
+}
+
+/*.petala_flor:first-child {
+    left: -50px;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.petala_flor:last-child {
+    right: -50px;
+    transform: translateY(-50%) rotate(45deg);
+}*/
+.petala_flor:nth-child(1) {
+    transform: translateY(-54%) translateX(-216%) rotate(0deg);
+    left: 70%;
+}
+
+.petala_flor:nth-child(2) {
+    transform: translateY(-55%) translateX(-100%) rotate(28deg);
+    left: 70%;
+}
+
+.petala_flor:nth-child(3) {
+    transform: translateY(-36%) translateX(-10%) rotate(40deg);
+    left: 70%;
+}
+
+.petala_flor:nth-child(4) {
+    transform: translateY(-14%) translateX(255%) rotate(55deg);
+    left: 50%;
+}
+
+.petala_flor:nth-child(5) {
+    transform: translateY(135%)translateX(-38%)  rotate(180deg);
+    left: 50%;
+}
+
+.petala_flor:nth-child(6) {
+    transform: translateY(-50%) translateX(-165%) rotate(-10deg);
+    left: 50%;
+}
+
+.petala_flor:nth-child(7) {
+    transform: translateY(-40%) translateX(-280%) rotate(-30deg);
+    left: 50%;
+}
+
+.petala_flor:nth-child(8) {
+    transform: translateY(125%) translateX(-235%) rotate(-160deg);
+    left: 50%;
+}
+.petala_flor:nth-child(9) {
+    transform: translateY(130%) translateX(168%) rotate(160deg);
+    left: 50%;
+}
+.petala_flor:nth-child(10) {
+    transform: translateY(108%) translateX(210%) rotate(140deg);
+    left: 50%;
+}
+.petala_flor:nth-child(11) {
+    transform: translateY(108%) translateX(-310%) rotate(-140deg);
+    left: 50%;
+}
+.petala_flor:nth-child(12) {
+    transform: translateY(-12%) translateX(-365%) rotate(-50deg);
+    left: 50%;
+}
+.petala_flor:nth-child(13) {
+    transform: translateY(48%) translateX(-440%) rotate(-90deg);
+    left: 50%;
+}
+.petala_flor:nth-child(14) {
+    transform: translateY(48%) translateX(340%) rotate(90deg);
+    left: 50%;
+}
+.petala_flor:nth-child(15) {
+    transform: translateY(80%) translateX(300%) rotate(112deg);
+    left: 50%;
+}
+.petala_flor:nth-child(16) {
+    transform: translateY(80%) translateX(-400%) rotate(-110deg);
+    left: 50%;
+}
+.petala_flor:nth-child(17) {
+    transform: translateY(130%) translateX(-135%) rotate(-170deg);
+    left: 50%;
+}
+.petala_flor:nth-child(18) {
+    transform: translateY(130%) translateX(65%) rotate(170deg);
+    left: 50%;
+}
+.petala_flor:nth-child(19) {
+    transform: translateY(15%) translateX(-420%) rotate(-70deg);
+    left: 50%;
+}
+.petala_flor:nth-child(20) {
+    transform: translateY(15%) translateX(310%) rotate(72deg);
+    left: 50%;
+}
+
+
+
+.linha_petala {
+    width: 1px;
+    height: 100px;
+    background-color: #9bcd55; /* Cor que combina com a pétala */
+    margin: 10px;
+}
+
+/*.haste_flor:last-child {
+    transform: rotate(15deg);
+}*/
+
+/* Ajuste da posição para a flor principal */
+.principal_flor{
+    width: 120px;
+    height: 20px;
+    background-color: yellow;
+    border: 1px solid black;
+    position: absolute;
+    top: 50%; /* Alinha no meio da haste */
+    transform: translateY(-50%); /* Ajusta a flor no centro da haste */
+}
+.girassol{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%; /* Centraliza o girassol horizontalmente */
+    transform: translateX(-50%); /* Ajusta o girassol para realmente ficar centralizado */
+    z-index: 1; /* Garante que o girassol esteja acima da haste */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    /*border:1px solid black;*/
+   /* background-color: yellow;*/
+}
+.girassol > #circulo{
+    width: 120px;
+    height: 120px;
+    border-radius: 80% !important;
+    border: 1px solid black;
+    background: radial-gradient(circle, #FFD700, #FFA500); /* Degradê dourado */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+
+}
+
+.flor_tulipa{
+    width: 250px;
+    height: 95vh;
+    border: 1px solid black;
+}
+
+.flor_tulipa:hover{
+   /* transform: scale(1.1);*/
+}
+
+.flor_tulipa:hover::after {
+    content: "Ouvi dizer por ai que a mistura de bondade e afeto formam as flores. Desde suas formas e cores. A cor do céu é algo muito inspirador de se ver. É de lá que vem a chuva que rega esse jardim. É de lá que bate o sol, acendendo a chama que te inspira a ser assim. Creio que é com uma receita secreta que se criam essas pérolas. Assim como o vento as flores vem e vão mas nunca em vão. A beleza disso tudo cura existências vazias. - Que cada uma dure o tempo que tiver que durar";
+    
+    position: absolute;
+    padding: 20px;
+    width: 100%; /* Mantendo a largura 100% */
+    height: auto; /* Ajuste automático da altura conforme o conteúdo */
+    border: 1px solid white;
+    transform: translateX(-150%) translateY(-50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 161, 195, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adicionando uma leve sombra para profundidade */
+    border-radius: 20px;
+}
+
+#container_flor, .flor_tulipa {
+    margin: 0 20px; /* Espaçamento entre as flores */
+}
+
+#container_flor {
+    width: 250px;
+    height: 100vh;
+    border-radius: 10px 10px 30px 30px;
+    position: relative;
+}
+
+.flor_tulipa {
+    width: 200px;
+    height: 400px; /* Ajuste conforme necessário */
+    border-radius: 10px; /* Arredonda os cantos */
+    position: relative;
+    top: 50px; /* Ajuste conforme necessário */
+    border: none;
+}
+
+.girassol {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100%; /* Mantém o girassol no topo da haste */
+    left: 50%; /* Centraliza */
+    transform: translateX(-50%);
+}
+
+.haste_flor {
+    width: 15px;
+    height: 0; /* Começa sem altura */
+    background: linear-gradient(49deg, rgba(70,145,60,1) 0%, rgba(113,191,105,1) 51%);
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    animation: crescerHaste 1s ease-out forwards; /* Aplica a animação */
+}
+
+@keyframes crescerHaste {
+    0% {
+        height: 0; /* A haste começa do tamanho 0 */
+        opacity: 0;
+    }
+    100% {
+        height: 400px; /* Finaliza com o tamanho desejado */
+        opacity: 1;
+    }
+}
+
+
+.petala_tulipa {
+    position: absolute;
+    width: 75px;
+    height: 120px;
+    z-index: 2;
+
+    /*border-radius: 180% 180% 120% 120%;*/
+    border-radius: 100% 100% 80% 80%;
+    animation:aparecerFlores 2.5s ease-out;
+
+
+
+}
+
+
+@keyframes aparecerFlores{
+    0%{
+        transform: translateX(-50%) translateY(0%)  scale(0);
+        opacity: 0%;
+    }
+    50%{
+        transform: translateX(-50%) scale(0);
+        opacity: 1%;
+    }
+}
+
+.petala_tulipa:nth-child(1) {
+    transform: translateX(50%) translateY(30%) rotate(-20deg);
+    top: -60px; /* Posiciona a pétala acima da haste */
+    z-index: 2;
+    background-color: #e6646e !important;
+}
+
+.petala_tulipa:nth-child(2) {
+    transform: translateX(80%) translateY(22%) rotate(0deg);
+    top: -60px; /* Posiciona a pétala acima da haste */
+    z-index: 1;
+    background-color: #ffa0a0 !important;
+}
+
+.petala_tulipa:nth-child(3) {
+    transform: translateX(120%) translateY(28%) rotate(20deg);
+    top: -60px; /* Posiciona a pétala acima da haste */
+    z-index: 1;
+    background-color:#ff8087 /* Cor da terceira pétala */
+}
+
+.petala_flor_tulipa:nth-child(1){
+    transform:  translateY(-12%) translateX(30%)  rotate(50deg);
+
+}
+.petala_flor_tulipa:nth-child(2){
+    transform:  translateY(20%) translateX(-140%)  rotate(-70deg);
+
+}
+
+
+.container {
+    position: relative;
+}
+
+.lanterna {
+    width: 250px;
+    height: 150px;
+    background-color: #f2e4b8;
+    border-radius: 20%;
+    box-shadow: 0 0 10px 5px rgba(255, 204, 0, 0.7);
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+}
+
+.container:hover .lanterna {
+    box-shadow: 0 0 50px 30px rgba(255, 204, 0, 0.7);
+    transform: scale(1.1);
+}
+
+
+
+#haste_girassol{
+    align-items: flex-end;
+
+
+}
+
+#canto_vaso {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.vaso {
+    width: 350px;
+    height: 60px; /* Aumentei um pouco a altura para dar mais destaque */
+    background: linear-gradient(180deg, #6b3e2e 0%, #4e2a1f 100%); /* Gradiente para um efeito 3D */
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 20px;
+    border: 3px solid #3b1e14; /* Borda para dar um efeito mais realista */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4); /* Sombra para dar profundidade */
+    margin-top: 20% !important;
+}
+
+.haste_flor {
+    position: absolute;
+    bottom: 10px; /* Mantém a base da haste no vaso */
+}
+
+.girassol {
+    bottom: auto;
+    top: 0; /* Ajuste para não ultrapassar o topo */
+}
+
+/*Regador das flores*/
+
+.regador {
+    position: relative;
+    width: 200px;
+    height: 120px;
+    margin: 50px auto;
+}
+
+/* Corpo principal do regador */
+#corpo {
+    width: 150px;
+    height: 100px;
+    background-color: #e64c3c;
+    border-radius: 20px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    box-shadow: inset -3px -3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Alça do regador */
+#alca {
+    width: 80px;
+    height: 80px;
+    border: 10px solid #e64c3c;
+    border-radius: 50%;
+    position: absolute;
+    top: -20px;
+    left: 100px;
+    transform: rotate(-20deg);
+}
+
+/* Bico do regador */
+#boca {
+    width: 40px;
+    height: 120px;
+    background-color: #e64c3c;
+    position: absolute;
+    top: 30px;
+    left: 160px;
+    transform: rotate(-30deg);
+    border-radius: 10px 10px 50px 50px;
+    box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ponta do regador */
+#ponta {
+    width: 50px;
+    height: 30px;
+    background-color: #e64c3c;
+    position: absolute;
+    top: -10px;
+    left: 190px;
+    transform: rotate(-20deg);
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Faixa amarela decorativa */
+#linha_amarela {
+    width: 130px;
+    height: 10px;
+    background-color: yellow;
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    border-radius: 8px;
+    box-shadow: inset 0px -2px 5px rgba(255, 255, 0, 0.6);
+}
+audio {
+    width: 300px; /* Define a largura do player */
+    height: 40px; /* Ajusta a altura (alguns navegadores respeitam) */
+    background: #f0f0f0; /* Cor de fundo */
+    border-radius: 10px; /* Cantos arredondados */
+    border: 2px solid #ff6600; /* Borda personalizada */
+    padding: 10px;
+    margin-top: 5%;
+    margin-left: 20px;
+}
